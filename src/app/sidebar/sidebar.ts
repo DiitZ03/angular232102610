@@ -12,3 +12,4 @@ export class Sidebar {
   @Input() moduleName: string = "";
 
 }
+
