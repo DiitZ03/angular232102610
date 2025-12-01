@@ -1,8 +1,8 @@
 import { CanActivateFn, Router } from '@angular/router';
 import { inject } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
-export const otentikasiGuard: CanActivateFn = (route, state) => {
-  return true;
+
+export const otentikasiGuard: CanActivateFn = (routes, state) => {
   console.log("Otentikasi dimulai");
 
   var userId = inject(CookieService).get('userId');
@@ -10,7 +10,15 @@ export const otentikasiGuard: CanActivateFn = (route, state) => {
 
   if (userId == null) {
     // Anggap belum login
-    else if (userId == "undenfined" ) {
-  }
-     {
+}   else if (userId == "undenfined" ) { 
+    // Anggap belum login
+}   else if (userId == "" ) {
+    // Anggap belum login
+}   else {  
+    return true; // Sudah login
+}
+
+inject(Router).navigate(["/login"]);
+  return false;
 };
+
