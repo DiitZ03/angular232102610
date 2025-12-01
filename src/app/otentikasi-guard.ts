@@ -2,11 +2,11 @@ import { CanActivateFn, Router } from '@angular/router';
 import { inject } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 
-export const otentikasiGuard: CanActivateFn = (routes, state) => {
+export const otentikasiGuard: CanActivateFn = (route, state) => {
   console.log("Otentikasi dimulai");
 
-  var userId = inject(CookieService).get('userId');
-  console.log("userId: " , userId);
+  var userId = inject(CookieService).get("userId");
+  console.log("userId: " + userId);
 
   if (userId == null) {
     // Anggap belum login
