@@ -7,6 +7,8 @@ import { Dashboard2 } from './dashboard2/dashboard2';
 import { Dashboard3 } from './dashboard3/dashboard3';
 import { Mahasiswa } from './mahasiswa/mahasiswa';
 import { otentikasiGuard } from './otentikasi-guard';
+import { Forex } from './forex/forex';
+import { Cuaca } from './cuaca/cuaca';
 
 export const routes: Routes = [
     { path: "", redirectTo: "login", pathMatch: "full" },
@@ -16,6 +18,9 @@ export const routes: Routes = [
     { path: "dashboard3", component: Dashboard3 },
     { path: "login", component: Login },
     { path: "signup", component: Signup },
-    { path: "mahasiswa", component: Mahasiswa, canActivate: [otentikasiGuard] }
+    { path: "mahasiswa", component: Mahasiswa, canActivate: [otentikasiGuard] },
+    { path: "forex", component: Forex, canActivate: [otentikasiGuard] },
+    { path: "cuaca", component: Cuaca, canActivate: [otentikasiGuard] }
+
 ];
 
