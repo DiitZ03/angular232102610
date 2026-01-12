@@ -44,7 +44,7 @@
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-
+        
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a [routerLink]="['/dashboard']" routerLinkActive="router-link-active" class="nav-link {{ moduleName == 'dashboard' ? 'active' : '' }}">
@@ -103,6 +103,13 @@
                 Cuaca
               </p>
             </a> 
+          </li>
+          
+            <li class="nav-item">
+            <a href="" class="nav-link" (click)="toggleTheme(); $event.preventDefault()">
+              <i class="nav-icon fas fa-adjust"></i>
+            <p>Light / Dark Mode</p>
+          </a>
           </li>
 
           <li class="nav-item">
